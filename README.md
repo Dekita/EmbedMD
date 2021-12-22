@@ -3,10 +3,15 @@ EmbedMD written by dekitarpg@gmail.com
 
 This simple module allows you to load a markdown file, or directory of, and then convert the file(s) into discord.js embed objects!
 
+### Install EmbedMD ###
+```
+npm i dekita-embed-md
+```
+
 ### Require EmbedMD ###
 ```js
 // EmbedMD specific code:
-const EmbedMD = require('embed-md');// load module
+const EmbedMD = require('dekita-embed-md');// load module
 ```
 
 ### EmbedMD File Structure ###
@@ -55,13 +60,9 @@ const embed = EmbedMD.getEmbed(embed_mds.embed_id); // get embed using embed_id
 ### PRO GAMER ###
 Its entirely possible to have the embed parse information based on additional properties. For example, you might want to display user information or some data from a variable within your embed. Simply pass an object as the second argument to `getEmbed` with the properties that you want to replace within your .md file. For example, lets assume the following md file:
 ```md
-# DESCRIPTION #
-This is an example for how to use dynamic data with EmbedMD! The data shown within the footer is dynamic based on the properties given during the `getEmbed` function call
-
 # FOOTER #
 user.name, user.avatar
 ``` 
-
 ```js
 const embed = EmbedMD.getEmbed(embed_mds.embed_id, {
     'user.avatar': interaction.user.displayAvatarURL(),
