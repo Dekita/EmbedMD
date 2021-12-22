@@ -7,9 +7,21 @@ const {MessageEmbed} = require('discord.js');
 const embed_cache = {};
 
 class EmbedMD {
+    /**
+     * EmbedMD._scanDir(directory)
+     * @private
+     * @param {string} directory - the directory to scan
+     * @returns Array of .md files contained within directory. 
+     */
     static _scanDir(directory) {
         return readdirSync(directory).filter(f => f.endsWith('.md'));
     }
+    /**
+     * EmbedMD.prepareMD(filename, refresh_cache=false)
+     * @param {string} filename - the filename to prepare for embed
+     * @param {boolean} refresh_cache -should cache be refreshed? 
+     * @returns The object with all the data, used for creating the embed.
+     */
     static prepareMD(filename, refresh_cache=false) {
         if (!embed_cache[filename] || refresh_cache) {
             embed_cache[filename] = {
@@ -27,6 +39,13 @@ class EmbedMD {
         }
         return embed_cache[filename]; 
     }
+    /**
+     * EmbedMD.parseDir(directory)
+     * @param {string} - directory the directory to parse 
+     * @returns Scans a directory for all .md files within it, then stores each file
+     * within an internal cache using its filename as the id. 
+     * @note multiple files of the same name will overwrite one another!!
+     */
     static parseDir(directory) {
         const returned_data = {};
         const info_files = this._scanDir(directory);
@@ -38,6 +57,14 @@ class EmbedMD {
         }
         return returned_data;
     }
+    /**
+     * EmbedMD.parseMD(filename, replacers, log, refresh)
+     * @param {string} filename - the file path for the markdown file to parse
+     * @param {object} [replacers={}] - object in format of {replacer: value}
+     * @param {boolean} [log=false] - log the embed object to console?
+     * @param {boolean} [refresh=false] - refresh the cache and reload data?
+     * @returns an object with embed data, used for `getEmbed`
+     */
     static parseMD(filename, replacers={}, log_embed_data=false, refresh_cache=false) {
         const embed_data = this.prepareMD(filename, refresh_cache);
         const chunks = this.format(embed_data.raw, replacers).split('#');
@@ -81,6 +108,14 @@ class EmbedMD {
         }
         return embed_data;
     }
+    /**
+     * EmbedMD.getEmbed(md_embed_object, replacers,log, refresh)
+     * @param {object} md_embed_object - object returned from parseDir element, or prepareMD() 
+     * @param {object} [replacers={}] - object in format of {replacer: value}
+     * @param {boolean} [log=false] - log the embed object to console?
+     * @param {boolean} [refresh=false] - refresh the cache and reload data?
+     * @returns {MessageEmbed} - a discord.js message embed.
+     */
     static getEmbed(md_embed_object, ...other) {
         const embed = new MessageEmbed();
         const embed_data = this.parseMD(md_embed_object.filename, ...other);
@@ -97,9 +132,16 @@ class EmbedMD {
         }
         return embed;
     }
-    // helper function to format strings using objects
-    // ie: format("Hi name!", {name: 'DekiaRPG});
-    // => "Hi DekitaRPG!"
+    /**
+     * EmbedMD.format(str, object)
+     * helper function to format strings using objects
+     * @param {string} str 
+     * @param {object} objekt 
+     * @returns formatted string using properties from given object as replacers
+     * @example 
+     * ie: format("Hi name!", {name: 'DekiaRPG});
+     * // => "Hi DekitaRPG!"
+     */
     static format(str, objekt) {
         const regstr = Object.keys(objekt).join("|");
         const regexp = new RegExp(regstr,"gi");
@@ -107,8 +149,13 @@ class EmbedMD {
             return objekt[matched.toLowerCase()];
         });
     }    
-    // convert arrays like ['1', '5', 'false', 'some description']
-    // to arrays like [1, 5, false, 'some description']
+    /**
+     * EmbedMD.parseArray(array)
+     * convert arrays like ['1', '5', 'false', 'some description']
+     * to arrays like [1, 5, false, 'some description']
+     * @param {array} array - the array to parse 
+     * @returns new clone of array, where strings that contain numbers or booleans are converted to their respective types
+     */
     static parseArray(field_data_array) {
         return field_data_array.map(element => {
             const v = element.toLowerCase().trim();
@@ -118,8 +165,15 @@ class EmbedMD {
     }
 }
 
+/**
+ * EmbedMD.delimiter
+ * Contains the delimiter used for parsing fields with multiple elements
+ */
 EmbedMD.delimiter = ',';
 
+/**
+ * The function map for each embed element
+ */
 EmbedMD.function_map = {
     url: 'setURL',
     title: 'setTitle',
@@ -132,6 +186,6 @@ EmbedMD.function_map = {
     timestamp: 'setTimestamp',
     footer: 'setFooter',
 }
-Object.freeze(EmbedMD.function_map);
 
+// Export the module <3
 module.exports = EmbedMD;
