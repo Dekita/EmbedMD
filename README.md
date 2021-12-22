@@ -113,7 +113,6 @@ EmbedMD.getEmbed(md_data, replacers={}, log=false, refresh=false);
 // uses properties within the `replacer` object to replace contents within the md file.
 // `log` determines if the embed object should be logged to console - useful for debugging.
 // `refresh` is a boolean to determine if the md file should be reloaded, or if we can use cache.
-// `parseMD()` will only prepare
 
 EmbedMD.format(string, object);
 // Replaces `string` elements that match properties from `object`. 

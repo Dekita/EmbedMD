@@ -83,13 +83,13 @@ class EmbedMD {
                 embed_data[type] = data.trim(); 
                 break;
 
-                case 'TIMESTAMP': 
-                embed_data[type] = data.trim() === 'true' ? Date.now() : false; 
-                break;
-    
                 case 'AUTHOR': 
                 case 'FOOTER': 
                 embed_data[type] = data.split(EmbedMD.delimiter).map(d=>d.trim());
+                break;
+    
+                case 'TIMESTAMP': 
+                if (data.trim() === 'true') embed_data[type] = Date.now(); 
                 break;
     
                 case 'FIELDS': 
