@@ -31,9 +31,9 @@ class EmbedMD {
                 timestamp: undefined,
                 title: undefined,
                 color: undefined,
-                author: [],
-                footer: [],
-                fields: [],
+                author: undefined,
+                footer: undefined,
+                fields: undefined,
                 filename,
             };
         }
