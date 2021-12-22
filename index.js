@@ -68,6 +68,7 @@ class EmbedMD {
     static parseMD(filename, replacers={}, log_embed_data=false, refresh_cache=false) {
         const embed_data = this.prepareMD(filename, refresh_cache);
         const chunks = this.format(embed_data.raw, replacers).split('#');
+        embed_data.fields = [] // <- reset fields to stop duplicates
         chunks.shift() // <- discard before the first #
         while (chunks.length) {
             const type = (chunks.shift()||"").trim().toLowerCase();
