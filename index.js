@@ -67,7 +67,7 @@ class EmbedMD {
      */
     static parseMD(filename, replacers={}, log_embed_data=false, refresh_cache=false) {
         const embed_data = this.prepareMD(filename, refresh_cache);
-        const chunks = this.format(embed_data.raw, replacers).split(EmbedMD.delimiter);
+        const chunks = this.format(embed_data.raw, replacers).split(EmbedMD.splitter);
         embed_data.fields = [] // <- reset fields to stop duplicates
         chunks.shift() // <- discard before the first #
         while (chunks.length) {
@@ -175,7 +175,7 @@ EmbedMD.newlines = /\r\n|\n\r|\n|\r/;
  * EmbedMD.splitter
  * Contains the main splitter used for parsing elements
  */
-EmbedMD.delimiter = '#';
+EmbedMD.splitter = '#';
 /**
  * EmbedMD.delimiter
  * Contains the delimiter used for parsing fields with multiple elements
