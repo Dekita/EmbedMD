@@ -116,7 +116,6 @@ class EmbedMD {
             return is_bool ? v === 'true' : (isNaN(v) ? v.trim() : parseInt(v));
         });
     }
-    
 }
 
 EmbedMD.delimiter = ',';
