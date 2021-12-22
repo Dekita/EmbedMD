@@ -1,4 +1,7 @@
-
+/**
+ * EmbedMD: dekitarpg@gmail.com
+ * https://github.com/Dekita/EmbedMD
+ */
 const { readdirSync, readFileSync } = require('fs');
 const {MessageEmbed} = require('discord.js');
 const embed_cache = {};
@@ -20,18 +23,6 @@ class EmbedMD {
         return readdirSync(directory).filter(f => f.endsWith('.md'));
     }
 
-    static parseDir(directory) {
-        const returned_data = {};
-        const info_files = this.scanDir(directory);
-        for (const file of info_files) {
-            const file_id = file.replace('.md','');
-            const filename = `${directory}/${file}`;
-            const file_data = this.prepareMD(filename);
-            returned_data[file_id] = file_data;
-        }
-        return returned_data;
-    }
-
     static prepareMD(filename, refresh_cache=false) {
         if (!embed_cache[filename] || refresh_cache) {
             embed_cache[filename] = {
@@ -50,7 +41,19 @@ class EmbedMD {
         return embed_cache[filename]; 
     }
 
-    static parseMD(filename, replacers={}, refresh_cache=false) {
+    static parseDir(directory) {
+        const returned_data = {};
+        const info_files = this.scanDir(directory);
+        for (const file of info_files) {
+            const file_id = file.replace('.md','');
+            const filename = `${directory}/${file}`;
+            const file_data = this.prepareMD(filename);
+            returned_data[file_id] = file_data;
+        }
+        return returned_data;
+    }
+
+    static parseMD(filename, replacers={}, log_embed_data=false, refresh_cache=false) {
         const embed_data = this.prepareMD(filename, refresh_cache);
         const chunks = this.format(embed_data.raw, replacers).split('#');
         chunks.shift() // <- discard before the first #
@@ -70,26 +73,27 @@ class EmbedMD {
     
                 case 'AUTHOR': 
                 case 'FOOTER': 
-                embed_data[type] = data.split(',').map(d=>d.trim());
+                embed_data[type] = data.split(EmbedMD.delimiter).map(d=>d.trim());
                 break;
     
                 case 'FIELDS': 
                 const field_lines = data.split(/\r\n|\n\r|\n|\r/);
                 for (const field of field_lines) {
-                    const [name, value, inline] = this.parseDataArray(field.split(','));
+                    const [name, value, inline] = this.parseDataArray(field.split(EmbedMD.delimiter));
                     embed_data.fields.push({ name, value, inline })
                 }
                 break;
     
                 case 'FIELD': 
-                const [name, value, inline] = this.parseDataArray(data.split(','));
+                const [name, value, inline] = this.parseDataArray(data.split(EmbedMD.delimiter));
                 embed_data.fields.push({ name, value, inline })
                 break;
             }
         }
-
-        const { raw, ...to_log} = embed_data;
-        // console.log('embed_data:', to_log);
+        if (log_embed_data) {
+            const { raw, ...to_log} = embed_data;
+            console.log('embed_data:', to_log);
+        }
         return embed_data;
     }
 
@@ -121,6 +125,8 @@ class EmbedMD {
         return embed;
     }
 }
+
+EmbedMD.delimiter = ',';
 
 EmbedMD.function_map = {
     url: 'setURL',

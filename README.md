@@ -1,7 +1,7 @@
 # README #
 EmbedMD written by dekitarpg@gmail.com
 
-This simple module allows you to load a markdown file, or directory of, and then convert the file(s) into discord.js embed objects!
+This simple module allows you to load a markdown file, or directory of, and then convert the file(s) into discord.js embed objects! You can then send those embeds in discord.js like you normally would!!
 
 ### Install EmbedMD ###
 ```
@@ -15,21 +15,24 @@ const EmbedMD = require('dekita-embed-md');// load module
 ```
 
 ### EmbedMD File Structure ###
-```md
+```ruby
+# URL #
+creator.url
+
 # TITLE #
-content 
+title text... 
 
 # COLOR #
 default
 
 # AUTHOR #
-user.name, user.avatar, https://discord.com/
+user.name, user.avatar, creator.url
 
 # THUMBNAIL #
 bot.avatar
 
 # DESCRIPTION #
-Some description...
+description text...
 
 # FOOTER #
 user.name, user.avatar
@@ -42,6 +45,10 @@ label, string, true
 
 # TIMESTAMP #
 false
+```
+note: FIELD, FIELDS, AUTHOR, and FOOTER elements exprect multiple properties. These should be delimited using an `,` character! If you dont want to delimit with `,`,, then you can set a custom delimiter by setting `EmbedMD.delimiter`. For example, to use `-`; 
+```js
+EmbedMD.delimiter = '-';
 ```
 
 ### Load single file and get embed ###
@@ -70,6 +77,7 @@ const embed_md = EmbedMD.prepareMD('/directory/path.md');
 const embed = EmbedMD.getEmbed(embed_md, {
     'user.avatar': interaction.user.displayAvatarURL(),
     'user.name': interaction.user.username,
+    'creator.url': "https://dekitarpg.com",
 }); 
 ```
 
@@ -81,3 +89,26 @@ await interaction.reply({embeds: [embed]});
 
 
 
+### Functions List ###
+```js
+EmbedMD.format(string, object);
+// Replaces `string` elements that match properties from `object`. 
+
+EmbedMD.parseDir(directory);
+// parses `directory` for .md files, then parses each file in prepration for creating embeds. 
+
+EmbedMD.parseMD(filepath, replacers={}, log=false, refresh=false);
+// parses `filepath`.md, then parses the data in prepration for creating embeds.
+// uses properties within the `replacer` object to replace contents within the md file.
+// `log` determines if the embed object should be logged to console - useful for debugging.
+// `refresh` is a boolean to determine if the md file should be reloaded, or if we can use cache.
+```
+
+
+
+### Additional ###
+You can also utilize the included format function (the one that replaces strings from properties defined in an object) for anything you might find useful. Its a handy little blighter! 
+```js
+EmbedMD.format("Hi name!", {name: 'DekiaRPG'});
+// => "Hi DekitaRPG!"
+```
