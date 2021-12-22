@@ -90,8 +90,7 @@ class EmbedMD {
                 break;
     
                 case 'FIELDS': 
-                const field_lines = data.split(/\r\n|\n\r|\n|\r/);
-                for (const field of field_lines) {
+                for (const field of data.split(/\r\n|\n\r|\n|\r/)) {
                     const [name, value, inline] = this.parseArray(field.split(EmbedMD.delimiter));
                     embed_data.fields.push({ name, value, inline })
                 }
@@ -104,7 +103,7 @@ class EmbedMD {
             }
         }
         if (log_embed_data) {
-            const { raw, ...to_log} = embed_data;
+            const {raw,...to_log} = embed_data;
             console.log('embed_data:', to_log);
         }
         return embed_data;
