@@ -120,3 +120,7 @@ EmbedMD.format(string, object);
 EmbedMD.parseArray(array);
 // Parse an array of strings where some are integers or booleans into an array of those objects.
 ```
+
+
+### Actual Real Life Reviews ###
+tbh this is the most useful/creative/good-idea lib i've seen around here in a long time - tim
