@@ -67,7 +67,7 @@ class EmbedMD {
      */
     static parseMD(filename, replacers={}, log_embed_data=false, refresh_cache=false) {
         const embed_data = this.prepareMD(filename, refresh_cache);
-        const chunks = this.format(embed_data.raw, replacers).split('#');
+        const chunks = this.format(embed_data.raw, replacers).split(EmbedMD.delimiter);
         embed_data.fields = [] // <- reset fields to stop duplicates
         chunks.shift() // <- discard before the first #
         while (chunks.length) {
@@ -79,9 +79,12 @@ class EmbedMD {
                 case 'COLOR': 
                 case 'IMAGE': 
                 case 'THUMBNAIL': 
-                case 'TIMESTAMP': 
                 case 'DESCRIPTION': 
                 embed_data[type] = data.trim(); 
+                break;
+
+                case 'TIMESTAMP': 
+                embed_data[type] = data.trim() === 'true'; 
                 break;
     
                 case 'AUTHOR': 
@@ -90,7 +93,7 @@ class EmbedMD {
                 break;
     
                 case 'FIELDS': 
-                for (const field of data.split(/\r\n|\n\r|\n|\r/)) {
+                for (const field of data.split(EmbedMD.newlines)) {
                     const [name, value, inline] = this.parseArray(field.split(EmbedMD.delimiter));
                     embed_data.fields.push({ name, value, inline })
                 }
@@ -122,13 +125,10 @@ class EmbedMD {
         for (const embed_element_data in embed_data) {
             if (!Object.hasOwnProperty.call(embed_data, embed_element_data)) continue;
             const element_funk = this.function_map[embed_element_data];
-            const element_data = embed_data[embed_element_data];
             if (!embed[element_funk]) continue;
-            if (Array.isArray(element_data)) {
-                embed[element_funk](...element_data);
-            } else {
-                embed[element_funk](element_data);
-            }
+            const element_data = embed_data[embed_element_data];
+            if (!Array.isArray(element_data)) embed[element_funk](element_data);
+            else embed[element_funk](...element_data);
         }
         return embed;
     }
@@ -164,13 +164,21 @@ class EmbedMD {
         });
     }
 }
-
+/**
+ * EmbedMD.newlines
+ * Contains the regexp splitter used to determine newlines
+ */
+EmbedMD.newlines = /\r\n|\n\r|\n|\r/;
+/**
+ * EmbedMD.splitter
+ * Contains the main splitter used for parsing elements
+ */
+EmbedMD.delimiter = '#';
 /**
  * EmbedMD.delimiter
  * Contains the delimiter used for parsing fields with multiple elements
  */
 EmbedMD.delimiter = ',';
-
 /**
  * The function map for each embed element
  */
@@ -186,6 +194,5 @@ EmbedMD.function_map = {
     timestamp: 'setTimestamp',
     footer: 'setFooter',
 }
-
 // Export the module <3
 module.exports = EmbedMD;

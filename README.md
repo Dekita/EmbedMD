@@ -23,7 +23,7 @@ creator.url
 title text... 
 
 # COLOR #
-default
+RANDOM
 
 # AUTHOR #
 user.name, user.avatar, creator.url
@@ -47,6 +47,8 @@ label, string, true
 false
 ```
 note: `FIELD`, `FIELDS`, `AUTHOR`, and `FOOTER` elements exprect multiple properties. These should be delimited using an `,` character! If you dont want to delimit with `,`, then you can set a custom delimiter by setting the `EmbedMD.delimiter`. For example, to use `-`; 
+
+note2: If using a hex color code within the `COLOR` field, remove the # or you will get errors! 
 ```js
 EmbedMD.delimiter = '-';
 ```
@@ -97,16 +99,21 @@ EmbedMD.parseArray(['1', '5', 'false', 'some description']);
 // => [1, 5, false, 'some description']
 ```
 
+
 ### Full Functions List ###
 ```js
 EmbedMD.parseDir(directory);
 // parses `directory` for .md files, then parses each file in prepration for creating embeds. 
 
-EmbedMD.parseMD(filepath, replacers={}, log=false, refresh=false);
-// parses `filepath`.md, then parses the data in prepration for creating embeds.
+const md_data = EmbedMD.prepareMD(filepath);
+// prepare single .md file for passing to getEmbed
+
+EmbedMD.getEmbed(md_data, replacers={}, log=false, refresh=false);
+// parses the md_data and then returns a discord.js embed object.
 // uses properties within the `replacer` object to replace contents within the md file.
 // `log` determines if the embed object should be logged to console - useful for debugging.
 // `refresh` is a boolean to determine if the md file should be reloaded, or if we can use cache.
+// `parseMD()` will only prepare
 
 EmbedMD.format(string, object);
 // Replaces `string` elements that match properties from `object`. 
