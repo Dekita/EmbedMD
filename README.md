@@ -46,7 +46,7 @@ false
 
 ### Load single file and get embed ###
 ```js
-const embed_md = EmbedMD.prepareMD('/directory/path'); // cache embed files from path
+const embed_md = EmbedMD.prepareMD('/directory/path.md'); // cache embed files from path
 const embed = EmbedMD.getEmbed(embed_md); // get embed using embed_md
 ```
 
@@ -58,13 +58,16 @@ const embed = EmbedMD.getEmbed(embed_mds.embed_id); // get embed using embed_id
 ```
 
 ### PRO GAMER ###
-Its entirely possible to have the embed parse information based on additional properties. For example, you might want to display user information or some data from a variable within your embed. Simply pass an object as the second argument to `getEmbed` with the properties that you want to replace within your .md file. For example, lets assume the following md file:
+Its entirely possible to have the embed parse information based on additional properties. For example, you might want to display user information or some data from a variable within your embed. Simply pass an object as the second argument to `getEmbed` with the properties that you want to replace within your .md file. For example, lets assume the following files:
+md file:
 ```md
 # FOOTER #
 user.name, user.avatar
 ``` 
+in your js file: 
 ```js
-const embed = EmbedMD.getEmbed(embed_mds.embed_id, {
+const embed_md = EmbedMD.prepareMD('/directory/path.md');
+const embed = EmbedMD.getEmbed(embed_md, {
     'user.avatar': interaction.user.displayAvatarURL(),
     'user.name': interaction.user.username,
 }); 
