@@ -1,14 +1,18 @@
 {
     "name": "dekita-embed-md",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "Converts MD files into discord js embeds!",
-    "author": "DekitaRPG (dekitarpg@gmail.com) [https://dekitarpg.com]",
+	"author": {
+		"name": "DekitaRPG",
+		"email": "dekitarpg@gmail.com",
+		"url": "https://dekitarpg.com"
+	},    
     "repository": {
         "type": "git",
         "url": "https://github.com/Dekita/EmbedMD"
     },
     "license": "MIT",
-    "main": "./index",
+    "main": "./index.js",
     "dependencies": {
         "discord.js": "^13.3.1"
     }
