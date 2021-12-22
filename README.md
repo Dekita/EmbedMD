@@ -15,7 +15,7 @@ const EmbedMD = require('dekita-embed-md');// load module
 ```
 
 ### EmbedMD File Structure ###
-```md
+```ruby
 # TITLE #
 content 
 
