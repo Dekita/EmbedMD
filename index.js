@@ -127,8 +127,10 @@ class EmbedMD {
             const element_funk = this.function_map[embed_element_data];
             if (!embed[element_funk]) continue;
             const element_data = embed_data[embed_element_data];
+            if (element_data === undefined) continue;
             if (!Array.isArray(element_data)) embed[element_funk](element_data);
-            else embed[element_funk](...element_data);
+            else if (element_data.length) embed[element_funk](...element_data);
+
         }
         return embed;
     }
