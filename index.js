@@ -84,7 +84,7 @@ class EmbedMD {
                 break;
 
                 case 'TIMESTAMP': 
-                embed_data[type] = data.trim() === 'true'; 
+                embed_data[type] = data.trim() === 'true' ? Date.now() : false; 
                 break;
     
                 case 'AUTHOR': 
