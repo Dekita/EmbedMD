@@ -46,7 +46,7 @@ label, string, true
 # TIMESTAMP #
 false
 ```
-note: FIELD, FIELDS, AUTHOR, and FOOTER elements exprect multiple properties. These should be delimited using an `,` character! If you dont want to delimit with `,`,, then you can set a custom delimiter by setting `EmbedMD.delimiter`. For example, to use `-`; 
+note: `FIELD`, `FIELDS`, `AUTHOR`, and `FOOTER` elements exprect multiple properties. These should be delimited using an `,` character! If you dont want to delimit with `,`, then you can set a custom delimiter by setting the `EmbedMD.delimiter`. For example, to use `-`; 
 ```js
 EmbedMD.delimiter = '-';
 ```
