@@ -7,22 +7,9 @@ const {MessageEmbed} = require('discord.js');
 const embed_cache = {};
 
 class EmbedMD {
-
-    // helper function to format strings using objects
-    // ie: format("Hi name!", {name: 'DekiaRPG});
-    // => "Hi DekitaRPG!"
-    static format(str, objekt) {
-        const regstr = Object.keys(objekt).join("|");
-        const regexp = new RegExp(regstr,"gi");
-        return str.replace(regexp, matched => {
-            return objekt[matched.toLowerCase()];
-        });
-    }    
-
-    static scanDir(directory) {
+    static _scanDir(directory) {
         return readdirSync(directory).filter(f => f.endsWith('.md'));
     }
-
     static prepareMD(filename, refresh_cache=false) {
         if (!embed_cache[filename] || refresh_cache) {
             embed_cache[filename] = {
@@ -40,10 +27,9 @@ class EmbedMD {
         }
         return embed_cache[filename]; 
     }
-
     static parseDir(directory) {
         const returned_data = {};
-        const info_files = this.scanDir(directory);
+        const info_files = this._scanDir(directory);
         for (const file of info_files) {
             const file_id = file.replace('.md','');
             const filename = `${directory}/${file}`;
@@ -52,7 +38,6 @@ class EmbedMD {
         }
         return returned_data;
     }
-
     static parseMD(filename, replacers={}, log_embed_data=false, refresh_cache=false) {
         const embed_data = this.prepareMD(filename, refresh_cache);
         const chunks = this.format(embed_data.raw, replacers).split('#');
@@ -79,13 +64,13 @@ class EmbedMD {
                 case 'FIELDS': 
                 const field_lines = data.split(/\r\n|\n\r|\n|\r/);
                 for (const field of field_lines) {
-                    const [name, value, inline] = this.parseDataArray(field.split(EmbedMD.delimiter));
+                    const [name, value, inline] = this.parseArray(field.split(EmbedMD.delimiter));
                     embed_data.fields.push({ name, value, inline })
                 }
                 break;
     
                 case 'FIELD': 
-                const [name, value, inline] = this.parseDataArray(data.split(EmbedMD.delimiter));
+                const [name, value, inline] = this.parseArray(data.split(EmbedMD.delimiter));
                 embed_data.fields.push({ name, value, inline })
                 break;
             }
@@ -96,18 +81,6 @@ class EmbedMD {
         }
         return embed_data;
     }
-
-    // convert arrays like ['1', '5', 'false', 'some description']
-    // to arrays like [1, 5, false, 'some description']
-    static parseDataArray(field_data_array) {
-        return field_data_array.map(element => {
-            const v = element.toLowerCase().trim();
-            const is_bool = ['true','false'].includes(v); 
-            const value = is_bool ? v === 'true' : (isNaN(v) ? v.trim() : parseInt(v));
-            return value;
-        });
-    }
-
     static getEmbed(md_embed_object, ...other) {
         const embed = new MessageEmbed();
         const embed_data = this.parseMD(md_embed_object.filename, ...other);
@@ -123,6 +96,25 @@ class EmbedMD {
             }
         }
         return embed;
+    }
+    // helper function to format strings using objects
+    // ie: format("Hi name!", {name: 'DekiaRPG});
+    // => "Hi DekitaRPG!"
+    static format(str, objekt) {
+        const regstr = Object.keys(objekt).join("|");
+        const regexp = new RegExp(regstr,"gi");
+        return str.replace(regexp, matched => {
+            return objekt[matched.toLowerCase()];
+        });
+    }    
+    // convert arrays like ['1', '5', 'false', 'some description']
+    // to arrays like [1, 5, false, 'some description']
+    static parseArray(field_data_array) {
+        return field_data_array.map(element => {
+            const v = element.toLowerCase().trim();
+            const is_bool = ['true','false'].includes(v); 
+            return is_bool ? v === 'true' : (isNaN(v) ? v.trim() : parseInt(v));
+        });
     }
 }
 

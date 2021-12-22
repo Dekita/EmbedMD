@@ -5,13 +5,13 @@ This simple module allows you to load a markdown file, or directory of, and then
 
 ### Install EmbedMD ###
 ```
-npm i dekita-embed-md
+npm i dekita-md-embed
 ```
 
 ### Require EmbedMD ###
 ```js
 // EmbedMD specific code:
-const EmbedMD = require('dekita-embed-md');// load module
+const EmbedMD = require('dekita-md-embed');// load module
 ```
 
 ### EmbedMD File Structure ###
@@ -87,13 +87,18 @@ const embed = EmbedMD.getEmbed(embed_md, {
 await interaction.reply({embeds: [embed]});
 ```
 
-
-
-### Functions List ###
+### Additional ###
+You can also utilize the included format function (the one that replaces strings from properties defined in an object) for anything you might find useful. Its a handy little blighter! 
 ```js
-EmbedMD.format(string, object);
-// Replaces `string` elements that match properties from `object`. 
+EmbedMD.format("Hi name!", {name: 'DekiaRPG'});
+// => "Hi DekitaRPG!"
 
+EmbedMD.parseArray(['1', '5', 'false', 'some description']);
+// => [1, 5, false, 'some description']
+```
+
+### Full Functions List ###
+```js
 EmbedMD.parseDir(directory);
 // parses `directory` for .md files, then parses each file in prepration for creating embeds. 
 
@@ -102,13 +107,10 @@ EmbedMD.parseMD(filepath, replacers={}, log=false, refresh=false);
 // uses properties within the `replacer` object to replace contents within the md file.
 // `log` determines if the embed object should be logged to console - useful for debugging.
 // `refresh` is a boolean to determine if the md file should be reloaded, or if we can use cache.
-```
 
+EmbedMD.format(string, object);
+// Replaces `string` elements that match properties from `object`. 
 
-
-### Additional ###
-You can also utilize the included format function (the one that replaces strings from properties defined in an object) for anything you might find useful. Its a handy little blighter! 
-```js
-EmbedMD.format("Hi name!", {name: 'DekiaRPG'});
-// => "Hi DekitaRPG!"
+EmbedMD.parseArray(array);
+// Parse an array of strings where some are integers or booleans into an array of those objects.
 ```
