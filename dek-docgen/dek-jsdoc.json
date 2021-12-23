@@ -1,0 +1,39 @@
+{
+    "plugins": [
+        "plugins/markdown"
+    ],
+    "source": {
+        "include": [
+            "./src"
+        ],
+        "includePattern": ".+\\.js(doc)?$",
+        "excludePattern": "(^|\\/|\\\\)_"
+    },
+    "opts": {
+        "recurse": true,
+        "private": true, 
+        "encoding": "utf8",
+        "destination": "./md-embed-doc",
+        "template": "./node_modules/@pixi/jsdoc-template"
+    },
+    "tags": {
+        "allowUnknownTags": true,
+        "dictionaries": ["jsdoc","closure"]
+    },
+    "templates": {
+        "cleverLinks": true,
+        "monospaceLinks": true,
+        "default": {
+            "outputSourceFiles": true,
+            "includeDate": true
+        },
+        "applicationName": "dekita-md-embed",
+        "linenums": true,
+        "favicon": "./dek-docgen/avatar.png",
+        "meta": {
+            "title": "dekita-md-embed",
+            "description": "Documentation for the dekita-md-embed library.",
+            "keyword": "discord discord.js utilities embed markdown template"
+        }
+    }
+}

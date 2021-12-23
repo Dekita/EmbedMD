@@ -1,0 +1,2890 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>dekita-md-embed</title>
+    
+    <meta name="description" content="Documentation for the dekita-md-embed library." />
+    
+        <meta name="keywords" content="discord discord.js utilities embed markdown template" />
+        <meta name="keyword" content="discord discord.js utilities embed markdown template" />
+    
+    
+    
+    <link rel="icon" type="image/png" href="favicon.png"/>
+    
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <script src="scripts/jquery.min.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link href="https://fonts.googleapis.com/css?family=Libre+Franklin:400,700" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/main.css">
+
+    
+    <script>
+    var config = {"monospaceLinks":true,"cleverLinks":true,"default":{"outputSourceFiles":true,"includeDate":true},"applicationName":"dekita-md-embed","linenums":true,"favicon":"favicon.png","meta":{"title":"dekita-md-embed","description":"Documentation for the dekita-md-embed library.","keyword":"discord discord.js utilities embed markdown template"},"faviconType":"image/png"};
+    </script>
+    
+
+    
+</head>
+<body>
+<div id="wrap" class="clearfix">
+    
+<div class="navigation">
+    <h3 class="applicationName"><a href="index.html">dekita-md-embed</a></h3>
+    <button id="menuToggle" class="btn btn-link btn-lg menu-toggle">
+        <span class="glyphicon glyphicon-menu-hamburger"></span>
+    </button>
+    <div class="search">
+        <input id="search" type="text" class="form-control input-md" placeholder="Search...">
+    </div>
+    <ul class="list">
+    
+    
+        <li class="item" data-name="EmbedMD">
+            <span class="title  ">
+                
+                
+                    <a href="EmbedMD.html">EmbedMD</a>
+                
+            </span>
+            
+            <ul class="members itemMembers">
+            
+            <span class="subtitle">Members</span>
+            
+                <li class="parent " data-name="EmbedMD.delimiter"><a href="EmbedMD.html#.delimiter">delimiter</a></li>
+            
+                <li class="parent " data-name="EmbedMD.function_map"><a href="EmbedMD.html#.function_map">function_map</a></li>
+            
+                <li class="parent " data-name="EmbedMD.global_replacers"><a href="EmbedMD.html#.global_replacers">global_replacers</a></li>
+            
+                <li class="parent " data-name="EmbedMD.newlines"><a href="EmbedMD.html#.newlines">newlines</a></li>
+            
+                <li class="parent " data-name="EmbedMD.splitter"><a href="EmbedMD.html#.splitter">splitter</a></li>
+            
+            </ul>
+            
+            <ul class="typedefs itemMembers">
+            
+            <span class="subtitle">Typedefs</span>
+            
+                <li class="parent" data-name="EmbedMD~Embed"><a href="EmbedMD.html#~Embed">Embed</a></li>
+            
+            </ul>
+            
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            
+            <ul class="methods itemMembers">
+            
+            <span class="subtitle">Methods</span>
+            
+                <li class="parent  " data-name="EmbedMD._parseMD"><a href="EmbedMD.html#._parseMD">_parseMD</a></li>
+            
+                <li class="parent  " data-name="EmbedMD._scanDir"><a href="EmbedMD.html#._scanDir">_scanDir</a></li>
+            
+                <li class="parent  " data-name="EmbedMD.format"><a href="EmbedMD.html#.format">format</a></li>
+            
+                <li class="parent  " data-name="EmbedMD.getEmbed"><a href="EmbedMD.html#.getEmbed">getEmbed</a></li>
+            
+                <li class="parent  " data-name="EmbedMD.parseArray"><a href="EmbedMD.html#.parseArray">parseArray</a></li>
+            
+                <li class="parent  " data-name="EmbedMD.parseDir"><a href="EmbedMD.html#.parseDir">parseDir</a></li>
+            
+                <li class="parent  " data-name="EmbedMD.prepareMD"><a href="EmbedMD.html#.prepareMD">prepareMD</a></li>
+            
+                <li class="parent  " data-name="EmbedMD.setGlobalReplacer"><a href="EmbedMD.html#.setGlobalReplacer">setGlobalReplacer</a></li>
+            
+                <li class="parent  " data-name="EmbedMD.unsetGlobalReplacer"><a href="EmbedMD.html#.unsetGlobalReplacer">unsetGlobalReplacer</a></li>
+            
+            </ul>
+            
+            <ul class="events itemMembers">
+            
+            </ul>
+            
+        </li>
+    
+    </ul>
+</div>
+
+    <div class="main">
+        <h1 class="page-title" data-filename="EmbedMD.html">Class: EmbedMD</h1>
+        
+
+
+
+<section>
+    
+<header>
+    <div class="header content-size">
+        <h2>EmbedMD
+        </h2>
+        
+            <div class="class-description"><p>The main namespace for the dekita-md-embed module.</p>
+<p>NOTE: This is a static class. Do not create a new instance of it!</p></div>
+        
+    </div>
+</header>  
+
+<article class="content-size">
+    
+        <div class="container-overview">
+        
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="EmbedMD">
+            <a class="share-icon" href="#EmbedMD"><span class="glyphicon glyphicon-link"></span></a>
+            <span class="">
+                new EmbedMD
+            </span>
+            <span class="signature">()</span>
+            
+            
+            
+            
+        </h4>
+    
+        
+        <div class="tag-source">
+            <a href="E__homegrown-node-modules_EmbedMD_src_index.js.html#line15">index.js:15</a>
+        </div>
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Throws an error when attempting to create instance.</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+        </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        <h3 class="subsection-title">Members</h3>
+        
+        <dl class="list-members">
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id=".delimiter">
+            <a class="share-icon" href="#.delimiter"><span class="glyphicon glyphicon-link"></span></a>
+            <span class="">EmbedMD.delimiter</span>
+            <span class="type-signature type">string</span>
+            
+            <span class="access-signature">static</span>
+            
+            
+        </h4>
+    </div>
+    
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Contains the delimiter used for parsing fields with multiple elements</p>
+<p>Default: <code>,</code></p>
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id=".function_map">
+            <a class="share-icon" href="#.function_map"><span class="glyphicon glyphicon-link"></span></a>
+            <span class="">EmbedMD.function_map</span>
+            <span class="type-signature type">object</span>
+            
+            <span class="access-signature">static</span>
+            
+            
+        </h4>
+    </div>
+    
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>An object containing key value pairs where the key is an identifier for the
+type of information, and the value is a string identifier for the discord.js
+MessageEmbed object function to call when creating the embed object.</p>
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+        <h5 class="subsection-title">Properties:</h5>
+        
+        <dl>
+
+<table class="props">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		<th>Default</th>
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>url</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+                <td class="default">
+                
+                    setURL
+                
+                </td>
+            
+            
+            <td class="description last"><p>Function called when setting embed url.</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>title</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+                <td class="default">
+                
+                    setTitle
+                
+                </td>
+            
+            
+            <td class="description last"><p>Function called when setting embed title.</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>color</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+                <td class="default">
+                
+                    setColor
+                
+                </td>
+            
+            
+            <td class="description last"><p>Function called when setting embed color.</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>author</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+                <td class="default">
+                
+                    setAuthor
+                
+                </td>
+            
+            
+            <td class="description last"><p>Function called when setting embed author.</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>description</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+                <td class="default">
+                
+                    setDescription
+                
+                </td>
+            
+            
+            <td class="description last"><p>Function called when setting embed description.</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>thumbnail</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+                <td class="default">
+                
+                    setThumbnail
+                
+                </td>
+            
+            
+            <td class="description last"><p>Function called when setting embed thumbnail.</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>fields</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+                <td class="default">
+                
+                    addFields
+                
+                </td>
+            
+            
+            <td class="description last"><p>Function called when setting embed fields.</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>image</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+                <td class="default">
+                
+                    setImage
+                
+                </td>
+            
+            
+            <td class="description last"><p>Function called when setting embed image.</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>timestamp</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+                <td class="default">
+                
+                    setTimestamp
+                
+                </td>
+            
+            
+            <td class="description last"><p>Function called when setting embed timestamp.</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>footer</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+                <td class="default">
+                
+                    setFooter
+                
+                </td>
+            
+            
+            <td class="description last"><p>Function called when setting embed footer.</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table></dl>
+        
+    
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id=".global_replacers">
+            <a class="share-icon" href="#.global_replacers"><span class="glyphicon glyphicon-link"></span></a>
+            <span class="">EmbedMD.global_replacers</span>
+            <span class="type-signature type">object</span>
+            
+            <span class="access-signature">static</span>
+            
+            
+        </h4>
+    </div>
+    
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Contains an object with all key: value pairs for replacers added
+using <a href="EmbedMD.html#.setGlobalReplacer"><code>EmbedMD.setGlobalReplacer</code></a>.</p>
+<p>Default: <code>{}</code></p>
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id=".newlines">
+            <a class="share-icon" href="#.newlines"><span class="glyphicon glyphicon-link"></span></a>
+            <span class="">EmbedMD.newlines</span>
+            <span class="type-signature type">string</span>
+            
+            <span class="access-signature">static</span>
+            
+            
+        </h4>
+    </div>
+    
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Contains the regexp splitter used to determine newlines</p>
+<p>Default: <code>/\r\n|\n\r|\n|\r/</code></p>
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id=".splitter">
+            <a class="share-icon" href="#.splitter"><span class="glyphicon glyphicon-link"></span></a>
+            <span class="">EmbedMD.splitter</span>
+            <span class="type-signature type">string</span>
+            
+            <span class="access-signature">static</span>
+            
+            
+        </h4>
+    </div>
+    
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Contains the main splitter used for parsing elements</p>
+<p>Default: <code>#</code></p>
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
+        </dl>
+    
+    
+    
+        <h3 class="subsection-title">Methods</h3>
+        
+        <dl class="list-methods">
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="._parseMD">
+            <a class="share-icon" href="#._parseMD"><span class="glyphicon glyphicon-link"></span></a>
+            <span class="">
+                EmbedMD._parseMD
+            </span>
+            <span class="signature">(filename, <span class="optional">replacers</span>, <span class="optional">log</span>, <span class="optional">refresh</span>)</span><span class="type-signature"><a href="EmbedMD.html#~Embed">EmbedMD~Embed</a></span>
+            
+            <span class="access-signature">static</span>
+            
+            
+        </h4>
+    
+        
+        <div class="tag-source">
+            <a href="E__homegrown-node-modules_EmbedMD_src_index.js.html#line40">index.js:40</a>
+        </div>
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+
+    
+    
+    
+    
+    
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		<th>Default</th>
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>filename</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+                <td class="default">
+                
+                </td>
+            
+            
+            <td class="description last">
+                
+                    
+                    
+                        
+                    
+                
+                <p>The file path for the markdown file to parse</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>replacers</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+            
+            
+                <td class="default">
+                
+                    {}
+                
+                </td>
+            
+            
+            <td class="description last">
+                
+                    
+                        <span class="optional">optional</span>
+                    
+                    
+                        
+                    
+                
+                <p>Object in format of {replacer: value}</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>log</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+            
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+            
+            <td class="description last">
+                
+                    
+                        <span class="optional">optional</span>
+                    
+                    
+                        
+                    
+                
+                <p>Log the embed object to console for debugging?</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>refresh</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+            
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+            
+            <td class="description last">
+                
+                    
+                        <span class="optional">optional</span>
+                    
+                    
+                        
+                    
+                
+                <p>Refresh the cache and reload data?</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Type</th>
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+        <tr>
+            
+            <td class="type">
+            
+                        <a href="EmbedMD.html#~Embed">EmbedMD~Embed</a>
+                        
+                    
+            </td>
+            <td class="description last">Data used for future calls to <a href="EmbedMD.html#.getEmbed"><code>EmbedMD.getEmbed</code></a></td>
+        </tr>
+    
+    </tbody>
+</table>
+
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="._scanDir">
+            <a class="share-icon" href="#._scanDir"><span class="glyphicon glyphicon-link"></span></a>
+            <span class="">
+                EmbedMD._scanDir
+            </span>
+            <span class="signature">(directory)</span><span class="type-signature">Array.&lt;String></span>
+            
+            <span class="access-signature">private</span><span class="access-signature">static</span>
+            
+            
+        </h4>
+    
+        
+        <div class="tag-source">
+            <a href="E__homegrown-node-modules_EmbedMD_src_index.js.html#line29">index.js:29</a>
+        </div>
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+
+    
+    
+    
+    
+    
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>directory</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                <p>The directory to scan for .md files</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Type</th>
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+        <tr>
+            
+            <td class="type">
+            
+                        Array.&lt;String>
+                        
+                    
+            </td>
+            <td class="description last">An array of strings each containing a path to a .md file within the given directory.</td>
+        </tr>
+    
+    </tbody>
+</table>
+
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id=".format">
+            <a class="share-icon" href="#.format"><span class="glyphicon glyphicon-link"></span></a>
+            <span class="">
+                EmbedMD.format
+            </span>
+            <span class="signature">(base_string, <span class="optional">replacers_objekt</span>)</span><span class="type-signature">string</span>
+            
+            <span class="access-signature">static</span>
+            
+            
+        </h4>
+    
+        
+        <div class="tag-source">
+            <a href="E__homegrown-node-modules_EmbedMD_src_index.js.html#line162">index.js:162</a>
+        </div>
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>A handy dandy helper function to format strings using object properties</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		<th>Default</th>
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>base_string</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+                <td class="default">
+                
+                </td>
+            
+            
+            <td class="description last">
+                
+                    
+                    
+                        
+                    
+                
+                <p>The string to format</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>replacers_objekt</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+            
+            
+                <td class="default">
+                
+                    {}
+                
+                </td>
+            
+            
+            <td class="description last">
+                
+                    
+                        <span class="optional">optional</span>
+                    
+                    
+                        
+                    
+                
+                <p>The object with properties to use as replacers.</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Type</th>
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+        <tr>
+            
+            <td class="type">
+            
+                        string
+                        
+                    
+            </td>
+            <td class="description last">The formatted string after using properties from given object as replacers.</td>
+        </tr>
+    
+    </tbody>
+</table>
+
+    
+    
+    
+        <h5>Example</h5>
+        
+
+    
+    <pre class="prettyprint"><code>EmbedMD.format("Hi name!", {name: 'DekiaRPG});// => "Hi DekitaRPG!"</code></pre>
+    
+
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id=".getEmbed">
+            <a class="share-icon" href="#.getEmbed"><span class="glyphicon glyphicon-link"></span></a>
+            <span class="">
+                EmbedMD.getEmbed
+            </span>
+            <span class="signature">(md_embed, <span class="optional">replacers</span>, <span class="optional">log</span>, <span class="optional">refresh</span>)</span><span class="type-signature">MessageEmbed</span>
+            
+            <span class="access-signature">static</span>
+            
+            
+        </h4>
+    
+        
+        <div class="tag-source">
+            <a href="E__homegrown-node-modules_EmbedMD_src_index.js.html#line137">index.js:137</a>
+        </div>
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+
+    
+    
+    
+    
+    
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		<th>Default</th>
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>md_embed</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type"><a href="EmbedMD.html#~Embed">EmbedMD~Embed</a></span>
+
+
+            
+            </td>
+            
+            
+                <td class="default">
+                
+                </td>
+            
+            
+            <td class="description last">
+                
+                    
+                    
+                        
+                    
+                
+                <p>An object returned from either <a href="EmbedMD.html#.prepareMD"><code>EmbedMD.prepareMD</code></a> or <a href="EmbedMD.html#.parseDir"><code>EmbedMD.parseDir</code></a></p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>replacers</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+            
+            
+                <td class="default">
+                
+                    {}
+                
+                </td>
+            
+            
+            <td class="description last">
+                
+                    
+                        <span class="optional">optional</span>
+                    
+                    
+                        
+                    
+                
+                <p>The replacer object in format of {replacer: value}</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>log</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+            
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+            
+            <td class="description last">
+                
+                    
+                        <span class="optional">optional</span>
+                    
+                    
+                        
+                    
+                
+                <p>Log the embed object to console for debugging?</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>refresh</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+            
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+            
+            <td class="description last">
+                
+                    
+                        <span class="optional">optional</span>
+                    
+                    
+                        
+                    
+                
+                <p>Refresh the cache for file and reload data?</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Type</th>
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+        <tr>
+            
+            <td class="type">
+            
+                        MessageEmbed
+                        
+                    
+            </td>
+            <td class="description last">A discord.js message embed object. See <a target="_blank" href="https://discord.js.org/#/docs/main/stable/class/MessageEmbed">discord.js documentation</a> for full object details.</td>
+        </tr>
+    
+    </tbody>
+</table>
+
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id=".parseArray">
+            <a class="share-icon" href="#.parseArray"><span class="glyphicon glyphicon-link"></span></a>
+            <span class="">
+                EmbedMD.parseArray
+            </span>
+            <span class="signature">(array)</span><span class="type-signature">Array.&lt;any></span>
+            
+            <span class="access-signature">static</span>
+            
+            
+        </h4>
+    
+        
+        <div class="tag-source">
+            <a href="E__homegrown-node-modules_EmbedMD_src_index.js.html#line179">index.js:179</a>
+        </div>
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>A helper function to map arrays of strings that contain numbers or booleans to their respective types.</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>array</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">array</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                <p>the array to parse</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Type</th>
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+        <tr>
+            
+            <td class="type">
+            
+                        Array.&lt;any>
+                        
+                    
+            </td>
+            <td class="description last">A clone of array with types converted where possible.</td>
+        </tr>
+    
+    </tbody>
+</table>
+
+    
+    
+    
+        <h5>Example</h5>
+        
+
+    
+    <pre class="prettyprint"><code>EmbedMD.parseArray(['1', '5', 'false', 'some description'])// => [1, 5, false, 'some description']</code></pre>
+    
+
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id=".parseDir">
+            <a class="share-icon" href="#.parseDir"><span class="glyphicon glyphicon-link"></span></a>
+            <span class="">
+                EmbedMD.parseDir
+            </span>
+            <span class="signature">(directory)</span><span class="type-signature">Array.&lt;<a href="EmbedMD.html#~Embed">EmbedMD~Embed</a>></span>
+            
+            <span class="access-signature">static</span>
+            
+            
+        </h4>
+    
+        
+        <div class="tag-source">
+            <a href="E__homegrown-node-modules_EmbedMD_src_index.js.html#line118">index.js:118</a>
+        </div>
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Scans a directory for all .md files within it, then stores each file
+within an internal cache using its filename as the id.</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>directory</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                <p>The directory to parse for .md files</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Type</th>
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+        <tr>
+            
+            <td class="type">
+            
+                        Array.&lt;<a href="EmbedMD.html#~Embed">EmbedMD~Embed</a>>
+                        
+                    
+            </td>
+            <td class="description last">An array of <a href="EmbedMD.html#~Embed"><code>EmbedMD~Embed</code></a> objects for all .md files within given directory.</td>
+        </tr>
+    
+    </tbody>
+</table>
+
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id=".prepareMD">
+            <a class="share-icon" href="#.prepareMD"><span class="glyphicon glyphicon-link"></span></a>
+            <span class="">
+                EmbedMD.prepareMD
+            </span>
+            <span class="signature">(filename, <span class="optional">refresh_cache</span>)</span><span class="type-signature"><a href="EmbedMD.html#~Embed">EmbedMD~Embed</a></span>
+            
+            <span class="access-signature">static</span>
+            
+            
+        </h4>
+    
+        
+        <div class="tag-source">
+            <a href="E__homegrown-node-modules_EmbedMD_src_index.js.html#line92">index.js:92</a>
+        </div>
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+
+    
+    
+    
+    
+    
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		<th>Default</th>
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>filename</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+                <td class="default">
+                
+                </td>
+            
+            
+            <td class="description last">
+                
+                    
+                    
+                        
+                    
+                
+                <p>The filename.md  to prepare for embed</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>refresh_cache</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+            
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+            
+            <td class="description last">
+                
+                    
+                        <span class="optional">optional</span>
+                    
+                    
+                        
+                    
+                
+                <p>Should the cache for this file be refreshed?</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Type</th>
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+        <tr>
+            
+            <td class="type">
+            
+                        <a href="EmbedMD.html#~Embed">EmbedMD~Embed</a>
+                        
+                    
+            </td>
+            <td class="description last">Data used for future calls to <a href="EmbedMD.html#.getEmbed"><code>EmbedMD.getEmbed</code></a></td>
+        </tr>
+    
+    </tbody>
+</table>
+
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id=".setGlobalReplacer">
+            <a class="share-icon" href="#.setGlobalReplacer"><span class="glyphicon glyphicon-link"></span></a>
+            <span class="">
+                EmbedMD.setGlobalReplacer
+            </span>
+            <span class="signature">(<span class="optional">string</span>, <span class="optional">value</span>)</span>
+            
+            <span class="access-signature">static</span>
+            
+            
+        </h4>
+    
+        
+        <div class="tag-source">
+            <a href="E__homegrown-node-modules_EmbedMD_src_index.js.html#line192">index.js:192</a>
+        </div>
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Sets a global replacer string.(used for all md embeds)</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>string</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                    
+                        <span class="optional">optional</span>
+                    
+                    
+                        
+                    
+                
+                <p>The id string to replace globally with value.</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>value</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                    
+                        <span class="optional">optional</span>
+                    
+                    
+                        
+                    
+                
+                <p>The value to be replaced globally.</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id=".unsetGlobalReplacer">
+            <a class="share-icon" href="#.unsetGlobalReplacer"><span class="glyphicon glyphicon-link"></span></a>
+            <span class="">
+                EmbedMD.unsetGlobalReplacer
+            </span>
+            <span class="signature">(<span class="optional">string</span>)</span>
+            
+            <span class="access-signature">static</span>
+            
+            
+        </h4>
+    
+        
+        <div class="tag-source">
+            <a href="E__homegrown-node-modules_EmbedMD_src_index.js.html#line201">index.js:201</a>
+        </div>
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>UN-Sets a global replacer string. (used for all md embeds)</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>string</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                    
+                        <span class="optional">optional</span>
+                    
+                    
+                        
+                    
+                
+                <p>The id string for the replacer to remove.</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        </dl>
+    
+    
+    
+        <h3 class="subsection-title">Type Definitions</h3>
+        
+        <dl class="list-definitions">
+                
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="~Embed">
+            <a class="share-icon" href="#~Embed"><span class="glyphicon glyphicon-link"></span></a>
+            <span class="">Embed</span>
+            
+            
+            
+            
+            
+        </h4>
+    </div>
+    
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>An object containing key value pairs where the key is a string identifier,
+and the value is an object with the properties detailed below:</p>
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+        <h5 class="subsection-title">Properties:</h5>
+        
+        <dl>
+
+<table class="props">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>raw</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>Contains the raw .md file data.</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>filename</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>Contains the filename for this data.</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>description</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">undefined</span>
+|
+
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>Contains the parsed description string.</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>thumbnail</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">undefined</span>
+|
+
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>Contains the parsed thumbnail string.</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>timestamp</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">undefined</span>
+|
+
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>Contains the timestamp of embed creation.</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>title</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">undefined</span>
+|
+
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>Contains the parsed title string.</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>color</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">undefined</span>
+|
+
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>Contains the parsed color string.</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>url</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">undefined</span>
+|
+
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>Contains the parsed url string.</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>author</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">undefined</span>
+|
+
+<span class="param-type">Array.&lt;string></span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>Contains the parsed author array.</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>footer</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">undefined</span>
+|
+
+<span class="param-type">Array.&lt;string></span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>Contains the parsed footer array.</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>fields</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">undefined</span>
+|
+
+<span class="param-type">Array.&lt;object></span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>Contains the parsed field objects array.</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table></dl>
+        
+    
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
+            </dl>
+    
+    
+    
+
+    
+</article>
+
+</section>  
+
+
+
+
+
+        
+
+        <footer class="content-size">
+            <div class="footer">
+                Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a> on Thu Dec 23 2021 10:03:51 GMT+0000 (Greenwich Mean Time)
+            </div>
+        </footer>
+    </div>
+</div>
+<script>prettyPrint();</script>
+<script src="scripts/main.js"></script>
+
+
+</body>
+</html>

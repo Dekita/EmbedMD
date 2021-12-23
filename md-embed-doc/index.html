@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>dekita-md-embed</title>
+    
+    <meta name="description" content="Documentation for the dekita-md-embed library." />
+    
+        <meta name="keywords" content="discord discord.js utilities embed markdown template" />
+        <meta name="keyword" content="discord discord.js utilities embed markdown template" />
+    
+    
+    
+    <link rel="icon" type="image/png" href="favicon.png"/>
+    
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <script src="scripts/jquery.min.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link href="https://fonts.googleapis.com/css?family=Libre+Franklin:400,700" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/main.css">
+
+    
+    <script>
+    var config = {"monospaceLinks":true,"cleverLinks":true,"default":{"outputSourceFiles":true,"includeDate":true},"applicationName":"dekita-md-embed","linenums":true,"favicon":"favicon.png","meta":{"title":"dekita-md-embed","description":"Documentation for the dekita-md-embed library.","keyword":"discord discord.js utilities embed markdown template"},"faviconType":"image/png"};
+    </script>
+    
+
+    
+</head>
+<body>
+<div id="wrap" class="clearfix">
+    
+<div class="navigation">
+    <h3 class="applicationName"><a href="index.html">dekita-md-embed</a></h3>
+    <button id="menuToggle" class="btn btn-link btn-lg menu-toggle">
+        <span class="glyphicon glyphicon-menu-hamburger"></span>
+    </button>
+    <div class="search">
+        <input id="search" type="text" class="form-control input-md" placeholder="Search...">
+    </div>
+    <ul class="list">
+    
+    
+        <li class="item" data-name="EmbedMD">
+            <span class="title  ">
+                
+                
+                    <a href="EmbedMD.html">EmbedMD</a>
+                
+            </span>
+            
+            <ul class="members itemMembers">
+            
+            <span class="subtitle">Members</span>
+            
+                <li class="parent " data-name="EmbedMD.delimiter"><a href="EmbedMD.html#.delimiter">delimiter</a></li>
+            
+                <li class="parent " data-name="EmbedMD.function_map"><a href="EmbedMD.html#.function_map">function_map</a></li>
+            
+                <li class="parent " data-name="EmbedMD.global_replacers"><a href="EmbedMD.html#.global_replacers">global_replacers</a></li>
+            
+                <li class="parent " data-name="EmbedMD.newlines"><a href="EmbedMD.html#.newlines">newlines</a></li>
+            
+                <li class="parent " data-name="EmbedMD.splitter"><a href="EmbedMD.html#.splitter">splitter</a></li>
+            
+            </ul>
+            
+            <ul class="typedefs itemMembers">
+            
+            <span class="subtitle">Typedefs</span>
+            
+                <li class="parent" data-name="EmbedMD~Embed"><a href="EmbedMD.html#~Embed">Embed</a></li>
+            
+            </ul>
+            
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            
+            <ul class="methods itemMembers">
+            
+            <span class="subtitle">Methods</span>
+            
+                <li class="parent  " data-name="EmbedMD._parseMD"><a href="EmbedMD.html#._parseMD">_parseMD</a></li>
+            
+                <li class="parent  " data-name="EmbedMD._scanDir"><a href="EmbedMD.html#._scanDir">_scanDir</a></li>
+            
+                <li class="parent  " data-name="EmbedMD.format"><a href="EmbedMD.html#.format">format</a></li>
+            
+                <li class="parent  " data-name="EmbedMD.getEmbed"><a href="EmbedMD.html#.getEmbed">getEmbed</a></li>
+            
+                <li class="parent  " data-name="EmbedMD.parseArray"><a href="EmbedMD.html#.parseArray">parseArray</a></li>
+            
+                <li class="parent  " data-name="EmbedMD.parseDir"><a href="EmbedMD.html#.parseDir">parseDir</a></li>
+            
+                <li class="parent  " data-name="EmbedMD.prepareMD"><a href="EmbedMD.html#.prepareMD">prepareMD</a></li>
+            
+                <li class="parent  " data-name="EmbedMD.setGlobalReplacer"><a href="EmbedMD.html#.setGlobalReplacer">setGlobalReplacer</a></li>
+            
+                <li class="parent  " data-name="EmbedMD.unsetGlobalReplacer"><a href="EmbedMD.html#.unsetGlobalReplacer">unsetGlobalReplacer</a></li>
+            
+            </ul>
+            
+            <ul class="events itemMembers">
+            
+            </ul>
+            
+        </li>
+    
+    </ul>
+</div>
+
+    <div class="main">
+        <h1 class="page-title" data-filename="index.html">Index</h1>
+        
+
+
+    
+
+
+    <h3> </h3>
+
+
+
+
+
+
+
+
+    
+
+
+
+
+    <section>
+        <article class="readme content-size"><h2><a target="_blank" href="https://dekitarpg.com/"><img src="https://dekitarpg.com/img/header/md-embed-header.png" style="margin-top: 28px;"></a></h2>
+<h1>What is EmbedMD?</h1>
+<p>EmbedMD, or <code>dekita-md-embed</code> is a simple module written by <a target="_blank" href="https://dekitarpg.com">DekitaRPG</a> that allows you to load a markdown file, or directory of, and then convert the file(s) into discord.js embed objects! You can then send those embeds in discord.js like you normally would!!</p>
+<p>Please note: <code>discord.js</code> is REQUIRED for this module to function.</p>
+<h2>License TLDR</h2>
+<p><code>Copyright (c) 2021 Dekita (dekitarpg@gmail.com)</code>
+<a target="_blank" href="https://github.com/Dekita/md-embed/blob/main/LICENSE">[view license]</a></p>
+<h2>System Requirements</h2>
+<p><a target="_blank" href="https://nodejs.org/">node.js</a> |
+<a target="_blank" href="https://discord.js.org/">discord.js</a></p>
+<h2>Author Information</h2>
+<p><a target="_blank" href="mailto://dekitarpg@gmail.com">email</a> |
+<a target="_blank" href="https://dekitarpg.com/">website</a> |
+<a target="_blank" href="https://twitter.com/dekitarpg">twitter</a> |
+<a target="_blank" href="https://github.com/dekita/md-embed/">github</a></p>
+<h2>How To Use This Module In Your Own Projects:</h2>
+<p>Assuming you already have a <code>node.js</code> project that uses <code>discord.js</code>, getting setup with this module is incredibly straighforward! Just follow the examples below to get you started.</p>
+<h2>Install EmbedMD</h2>
+<pre class="prettyprint source"><code>npm i dekita-md-embed
+</code></pre>
+<h2>Require EmbedMD</h2>
+<pre class="prettyprint source lang-js"><code>const EmbedMD = require('dekita-md-embed');
+</code></pre>
+<h2>Create Markdown Files</h2>
+<p>Once you have installed EmbedMD, create a file and save it as <code>filename.md</code>. Use the format detailed below for the file contents, and then it can be used as a template for creating discord.js embeds.</p>
+<pre class="prettyprint source"><code># URL #
+creator.url
+
+# TITLE #
+title text... 
+
+# COLOR #
+RANDOM
+
+# AUTHOR #
+user.name, user.avatar, creator.url
+
+# THUMBNAIL #
+bot.avatar
+
+# DESCRIPTION #
+description text...
+
+# FOOTER #
+user.name, user.avatar
+
+# FIELD #
+label, string, true
+
+# FIELDS #
+label, string, true
+
+# TIMESTAMP #
+false
+</code></pre>
+<p>NOTE1: If using a hex color code within the <code>COLOR</code> field, remove the # or you will get errors!
+NOTE2: <code>FIELD</code>, <code>FIELDS</code>, <code>AUTHOR</code>, and <code>FOOTER</code> elements exprect multiple properties. These should be delimited using an <code>,</code> character! If you dont want to delimit with <code>,</code> then you can set a custom delimiter by setting the <code>EmbedMD.delimiter</code>. For example, to use <code>-</code>;</p>
+<pre class="prettyprint source lang-js"><code>EmbedMD.delimiter = '-';
+</code></pre>
+<h2>Load A File Then Create Embed</h2>
+<pre class="prettyprint source lang-js"><code>const embed_md = EmbedMD.prepareMD('/directory/path.md'); // cache embed files from path
+const embed = EmbedMD.getEmbed(embed_md); // get embed using embed_md
+</code></pre>
+<h2>Load All Files From Directory Then Create Embed</h2>
+<pre class="prettyprint source lang-js"><code>const embed_mds = EmbedMD.parseDir('/directory/path'); // cache embed files from path
+const embed_ids = Object.keys(embed_mds); // array of filenames without.md and route
+const embed = EmbedMD.getEmbed(embed_mds.embed_id); // get embed using embed_id
+</code></pre>
+<h2>Send Embed With discord.js</h2>
+<pre class="prettyprint source lang-js"><code>// in some discord js command interaction:
+await interaction.reply({embeds: [embed]});
+</code></pre>
+<h2>Formatting Embed Templates</h2>
+<p>Its entirely possible to have the embed parse information based on additional properties. For example, you might want to display user information or some data from a variable within your embed. Simply pass an object as the second argument to <code>getEmbed</code> with the properties that you want to replace within your .md file. For example, lets assume the following files:</p>
+<p>file.md:</p>
+<pre class="prettyprint source lang-md"><code># FOOTER #
+user.name, user.avatar
+</code></pre>
+<p>file.js:</p>
+<pre class="prettyprint source lang-js"><code>const embed_md = EmbedMD.prepareMD('./file.md');
+const embed = EmbedMD.getEmbed(embed_md, {
+    'user.avatar': interaction.user.displayAvatarURL(),
+    'user.name': interaction.user.username,
+    'creator.url': &quot;https://dekitarpg.com&quot;,
+}); 
+</code></pre>
+<p>With these files in place, an embed with only footer information will be created, and will use the interaction user information for the footer content when being initialized.</p>
+<h2>Additional</h2>
+<p>You can also utilize the included helper functions for anything you might find useful. They are pretty handy!</p>
+<pre class="prettyprint source lang-js"><code>EmbedMD.format(&quot;Hi name!&quot;, {name: 'DekiaRPG'});
+// => &quot;Hi DekitaRPG!&quot;
+
+EmbedMD.parseArray(['1', '5', 'false', 'some description']);
+// => [1, 5, false, 'some description']
+</code></pre>
+<h2>Actual Real Life Reviews</h2>
+<p>Tbh this is the most useful/creative/good-idea lib i've seen around here in a long time - Tim @ <a target="_blank" href="https://discord.gg/dbl">[top.gg discord server]</a>.</p></article>
+    </section>
+
+
+
+
+
+
+        
+
+        <footer class="content-size">
+            <div class="footer">
+                Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a> on Thu Dec 23 2021 10:03:51 GMT+0000 (Greenwich Mean Time)
+            </div>
+        </footer>
+    </div>
+</div>
+<script>prettyPrint();</script>
+<script src="scripts/main.js"></script>
+
+
+</body>
+</html>
