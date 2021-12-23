@@ -123,4 +123,4 @@ EmbedMD.parseArray(['1', '5', 'false', 'some description']);
 ```
 
 ## Actual Real Life Reviews
-Tbh this is the most useful/creative/good-idea lib i've seen around here in a long time - Tim @ [[top.gg discord server]](https://discord.gg/dbl).
+Tbh this is the most useful/creative/good-idea lib i've seen around here in a long time - Tim
