@@ -13,7 +13,7 @@
         "recurse": true,
         "private": true, 
         "encoding": "utf8",
-        "destination": "./md-embed-doc",
+        "destination": "./docs",
         "template": "./node_modules/@pixi/jsdoc-template"
     },
     "tags": {
@@ -29,7 +29,7 @@
         },
         "applicationName": "dekita-md-embed",
         "linenums": true,
-        "favicon": "./dek-docgen/avatar.png",
+        "favicon": "./docgen/avatar.png",
         "meta": {
             "title": "dekita-md-embed",
             "description": "Documentation for the dekita-md-embed library.",

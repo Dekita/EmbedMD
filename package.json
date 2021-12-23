@@ -14,7 +14,7 @@
     "license": "MIT",
     "main": "./src/index.js",
     "scripts": {
-        "generate-doc": "jsdoc -c dek-docgen/dek-jsdoc.json -R ./readme.md"
+        "generate-doc": "jsdoc -c docgen/dek-jsdoc.json -R ./readme.md"
     },
     "devDependencies": {
         "@pixi/jsdoc-template": "^2.6.0",
