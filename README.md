@@ -10,6 +10,9 @@ Please note: `discord.js` is REQUIRED for this module to function.
 ```Copyright (c) 2021 Dekita (dekitarpg@gmail.com)```
 [[view license]](https://github.com/Dekita/md-embed/blob/main/LICENSE)
 
+## Documentation
+[https://dekita.github.io/md-embed/](https://dekita.github.io/md-embed/)
+
 ## System Requirements
 [node.js](https://nodejs.org/) |
 [discord.js](https://discord.js.org/)
