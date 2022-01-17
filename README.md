@@ -39,7 +39,7 @@ const EmbedMD = require('dekita-md-embed');
 Once you have installed EmbedMD, create a file and save it as `filename.md`. Use the format detailed below for the file contents, and then it can be used as a template for creating discord.js embeds.
 ```
 # URL #
-creator.url
+{creator.url}
 
 # TITLE #
 title text... 
@@ -48,28 +48,29 @@ title text...
 RANDOM
 
 # AUTHOR #
-user.name, user.avatar, creator.url
+{user.name} :: {user.avatar} :: {creator.url}
 
 # THUMBNAIL #
-bot.avatar
+{bot.avatar}
 
 # DESCRIPTION #
 description text...
 
 # FOOTER #
-user.name, user.avatar
+{user.name} :: {user.avatar}
 
 # FIELD #
-label, string, true
+label :: string :: true
 
 # FIELDS #
-label, string, true
+label :: string :: true
 
 # TIMESTAMP #
 false
 ```
+
 NOTE1: If using a hex color code within the `COLOR` field, remove the # or you will get errors! 
-NOTE2: `FIELD`, `FIELDS`, `AUTHOR`, and `FOOTER` elements exprect multiple properties. These should be delimited using an `,` character! If you dont want to delimit with `,` then you can set a custom delimiter by setting the `EmbedMD.delimiter`. For example, to use `-`; 
+NOTE2: `FIELD`, `FIELDS`, `AUTHOR`, and `FOOTER` elements exprect multiple properties. These should be delimited using a double `:` character (`::`)! If you dont want to delimit with `::` then you can set a custom delimiter by setting the `EmbedMD.delimiter`. For example, to use `-`; 
 ```js
 EmbedMD.delimiter = '-';
 ```
@@ -99,18 +100,27 @@ Its entirely possible to have the embed parse information based on additional pr
 file.md:
 ```md
 # FOOTER #
-user.name, user.avatar
+{user.name} :: {user.avatar}
 ``` 
 file.js: 
 ```js
 const embed_md = EmbedMD.prepareMD('./file.md');
 const embed = EmbedMD.getEmbed(embed_md, {
-    'user.avatar': interaction.user.displayAvatarURL(),
-    'user.name': interaction.user.username,
-    'creator.url': "https://dekitarpg.com",
+    '{user.avatar}': interaction.user.displayAvatarURL(),
+    '{user.name}': interaction.user.username,
+    '{creator.url}': "https://dekitarpg.com",
 }); 
 ```
 With these files in place, an embed with only footer information will be created, and will use the interaction user information for the footer content when being initialized.
+
+## Global Replacers
+You can define replacer key:value's globally by using the `setGlobalReplacer` function. All future embedds created will use then these replacers. NOTE: If you define a global replacer, and then supply a duplicate replacer for any embed template, the global replacer will be ignored. Use `unsetGlobalReplacer` if you need to later remove global replacer key:values. 
+
+```js
+EmbedMD.setGlobalReplacer('{bot.name}', client.user.username);
+EmbedMD.setGlobalReplacer('{bot.color}', CONFIG.embed_color.replace('#',''));
+EmbedMD.setGlobalReplacer('{bot.avatar}', client.user.displayAvatarURL());
+```
 
 ## Additional
 You can also utilize the included helper functions for anything you might find useful. They are pretty handy!

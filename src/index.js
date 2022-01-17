@@ -46,22 +46,18 @@ class EmbedMD {
             const type = (chunks.shift()||"").trim().toLowerCase();
             const data = (chunks.shift()||"").trim();
             switch (type.toUpperCase()) {
-                case 'URL':
-                case 'TITLE': 
-                case 'COLOR': 
-                case 'IMAGE': 
-                case 'THUMBNAIL': 
-                case 'DESCRIPTION': 
-                embed_data[type] = data.trim(); 
+                case 'AUTHOR': 
+                const [a_name, a_url, a_iconURL] = data.split(EmbedMD.delimiter).map(d=>d.trim());
+                embed_data[type] = {name: a_name, url: a_url, iconURL: a_iconURL};
                 break;
 
-                case 'AUTHOR': 
                 case 'FOOTER': 
-                embed_data[type] = data.split(EmbedMD.delimiter).map(d=>d.trim());
+                const [footer_text, footer_iconURL] = data.split(EmbedMD.delimiter).map(d=>d.trim());
+                embed_data[type] = {text: footer_text, iconURL: footer_iconURL};
                 break;
-    
+
                 case 'TIMESTAMP': 
-                if (data.trim() === 'true') embed_data[type] = Date.now(); 
+                if (data.trim().toLowerCase() === 'true') embed_data[type] = Date.now(); 
                 break;
     
                 case 'FIELDS': 
@@ -74,6 +70,19 @@ class EmbedMD {
                 case 'FIELD': 
                 const [name, value, inline] = this.parseArray(data.split(EmbedMD.delimiter));
                 embed_data.fields.push({ name, value, inline })
+                break;
+
+                // case 'URL':
+                // case 'TITLE': 
+                // case 'COLOR': 
+                // case 'IMAGE': 
+                // case 'THUMBNAIL': 
+                // case 'DESCRIPTION': 
+                // embed_data[type] = data.trim(); 
+                // break;
+
+                default: 
+                embed_data[type] = data.trim(); 
                 break;
             }
         }
@@ -239,7 +248,7 @@ EmbedMD.splitter = '#';
 * Default: `,`
 * @type {string}
 */
-EmbedMD.delimiter = ',';
+EmbedMD.delimiter = ' ::';
 
 /**
 * An object containing key value pairs where the key is an identifier for the 
