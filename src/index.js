@@ -291,7 +291,7 @@ EmbedMD.function_map = {
     * @description Function called when setting embed fields.
     * @type {string}
     */
-    fields: 'addFields',
+    fields: 'setFields',
     /**
     * @description Function called when setting embed image.
     * @type {string}
