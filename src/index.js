@@ -118,10 +118,10 @@ class EmbedMD {
     }
 
     /**
-     * Scans a directory for all .md files within it, then stores each file
-     * within an internal cache using its filename as the id. 
-     * @param {string} directory - The directory to parse for .md files
-     * @note multiple files of the same name will overwrite one another!!
+    * Scans a directory for all .md files within it, then stores each file
+    * within an internal cache using its filename as the id. 
+    * @param {string} directory - The directory to parse for .md files
+    * @note multiple files of the same name will overwrite one another!!
     * @returns {EmbedMD~Embed[]} An array of {@link EmbedMD~Embed} objects for all .md files within given directory. 
     */
     static parseDir(directory) {
